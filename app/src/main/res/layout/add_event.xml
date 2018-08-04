@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+        <variable
+            name="viewModel"
+            type="retrofit.android.vogella.com.rmember.ViewModel.LoginViewModel"/>
+    </data>
+
+    <RelativeLayout
+        android:background="#336B87"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context = ".MainActivity">
+
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            >
+
+
+            <EditText
+                android:id="@+id/edt_name"
+                android:hint="Task Title"
+                android:inputType="text"
+                android:padding="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:addTextChangedListener="@{viewModel.getEmailTextWatcher}"
+                android:textColorHint="#fff"
+                android:textColor="#fff"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                />
+
+            <EditText
+                android:id="@+id/edt_email"
+                android:hint="Task Detail"
+                android:padding="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:addTextChangedListener="@{viewModel.getEmailTextWatcher}"
+                android:textColorHint="#fff"
+                android:textColor="#fff"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:inputType="textCapSentences|textMultiLine"
+                android:maxLength="2000"
+                android:maxLines="4"
+                />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Date will be placed here."
+                    android:layout_marginLeft="20dp"
+                    android:layout_centerVertical="true"
+                    android:textColor="#fff"
+
+                    />
+
+                <Button
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:id="@+id/btn_set_date"
+                    android:text="SET DATE"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#C4DFE6"
+                    android:textColor="#336B87"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    />
+
+            </RelativeLayout>
+
+
+
+        </LinearLayout>
+
+        <Button
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:id="@+id/btn_add_event"
+            android:text="ADD EVENT"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#C4DFE6"
+            android:textColor="#336B87"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_alignParentBottom="true"
+            />
+
+    </RelativeLayout>
+
+
+</layout>

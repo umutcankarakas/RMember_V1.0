@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <data>
+        <variable
+            name="viewModel"
+            type="retrofit.android.vogella.com.rmember.ViewModel.LoginViewModel"/>
+    </data>
+
+    <RelativeLayout
+        android:background="#336B87"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context = ".MainActivity">
+
+
+
+        <LinearLayout
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24dp"
+                android:text="REGISTER"
+                android:gravity="center_horizontal"
+                android:textColor="#FFF"
+                android:layout_marginBottom="5dp"
+                />
+
+            <EditText
+                android:id="@+id/edt_name"
+                android:hint="Name"
+                android:inputType="textEmailAddress"
+                android:padding="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:addTextChangedListener="@{viewModel.getEmailTextWatcher}"
+                android:background="#437B97"
+                android:textColorHint="#fff"
+                android:textColor="#fff"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                />
+
+            <EditText
+                android:id="@+id/edt_email"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:padding="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:addTextChangedListener="@{viewModel.getEmailTextWatcher}"
+                android:background="#437B97"
+                android:textColorHint="#fff"
+                android:textColor="#fff"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                />
+
+            <EditText
+                android:id="@+id/edt_password"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:padding="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:addTextChangedListener="@{viewModel.getPasswordTextWatcher}"
+                android:background="#437B97"
+                android:textColorHint="#fff"
+                android:textColor="#fff"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                />
+
+            <Button
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:id="@+id/btn_register"
+                android:text="REGISTER"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="@{viewModel::onLoginClicked}"
+                android:background="#C4DFE6"
+                android:textColor="#336B87"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</layout>
